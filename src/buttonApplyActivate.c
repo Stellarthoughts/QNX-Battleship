@@ -29,12 +29,15 @@ buttonApplyActivate( PtWidget_t *widget, ApInfo_t *apinfo, PtCallbackInfo_t *cbi
 		{
 			if(playerSelect[i] == NULL)
 			{
+				PtSetResource(ABW_tbPrompt, Pt_ARG_TEXT_STRING, "Hint: You must place 5 ships before applying", 0);
 				return( Pt_CONTINUE );
 			}
 		}
 		PtUnrealizeWidget(ABW_btnReset);
 		PtUnrealizeWidget(widget);
 		gameState = 2;
+		PtSetResource(ABW_tbPrompt, Pt_ARG_TEXT_STRING, "Hint: Connect to server, then hit Ready", 0);
+		PtSetResource(ABW_tbGameState, Pt_ARG_TEXT_STRING, "Game state: Field filled", 0);
 		printf("GameState = FIELD FILLED\n");
 	}
 

@@ -28,5 +28,11 @@ int gameState = 0;
 
 int** playerSelect;
 int** enemySelect;
+int** enemyHit;
+int hits = 0;
 
-
+char ndString[512];
+pid_t spid;
+int chid;
+int coid;
+int hasServerData = 0;

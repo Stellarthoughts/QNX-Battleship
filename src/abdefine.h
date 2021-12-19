@@ -23,6 +23,8 @@ extern const int ABN_tbPrompt;
 #define ABW_tbPrompt                         AbGetABW( ABN_tbPrompt )
 extern const int ABN_tbGameState;
 #define ABW_tbGameState                      AbGetABW( ABN_tbGameState )
+extern const int ABN_btnReady;
+#define ABW_btnReady                         AbGetABW( ABN_btnReady )
 
 #define AbGetABW( n ) ( AbWidgets[ n ].wgt )
 

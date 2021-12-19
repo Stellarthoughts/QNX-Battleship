@@ -17,7 +17,7 @@
 #include "ablibs.h"
 #include "abimport.h"
 #include "proto.h"
-
+#include "global.h"
 
 int
 buttonReconnectActivate( PtWidget_t *widget, ApInfo_t *apinfo, PtCallbackInfo_t *cbinfo )
@@ -26,35 +26,27 @@ buttonReconnectActivate( PtWidget_t *widget, ApInfo_t *apinfo, PtCallbackInfo_t 
 	printf("ReconnectActivate\n");
 	widget = widget, apinfo = apinfo, cbinfo = cbinfo;
 
-	char ndString[512];
-	pid_t spid;
-	int chid;
-	int coid;
-
 	FILE* f;
-
-	// Read local data
-	char* localname = "tempInfo.txt";
-	f = fopen(localname,"r");
-	if(f)
-	{
-		fscanf(f, "%s %d %d %d",&ndString,&spid,&chid,&coid);
-		ConnectDetach(coid);
-		fclose(f);
-		remove(localname);
-	}
 
 	// Read server data
 	char* filename = "serverInfo.txt";
 	f = fopen(filename,"r");
 	if(!f)
 	{
-		PtSetResource(ABW_tbStatus,Pt_ARG_TEXT_STRING,"Status: Connection error.\nBad server info file",0);
+		PtSetResource(ABW_tbStatus,Pt_ARG_TEXT_STRING,"Status: Connection error. Bad server info file",0);
+	}
+	else
+	{
+		fscanf(f, "%s %d %d",&ndString,&spid,&chid);
+		int nd = netmgr_strtond(&ndString,NULL);
+		fclose(f);
+		hasServerData = 1;
+	}
+
+	if(hasServerData == 0)
+	{
 		return( Pt_CONTINUE );
 	}
-	fscanf(f, "%s %d %d",&ndString,&spid,&chid);
-	int nd = netmgr_strtond(&ndString,NULL);
-	fclose(f);
 
 	// Connect to channel
 	coid = ConnectAttach(0, spid, chid, 0, 0);
@@ -69,25 +61,5 @@ buttonReconnectActivate( PtWidget_t *widget, ApInfo_t *apinfo, PtCallbackInfo_t 
 		PtSetResource(ABW_tbStatus,Pt_ARG_TEXT_STRING,"Status: Connected to server",0);
 	}
 
-	// connected message
-	char* formatted = (char*) calloc (sizeof(char),100);
-	sprintf(formatted,"Connected!\nND: %s\nSPID: %d\nCHID: %d\nCOID: %d",ndString,spid,chid,coid);
-	//PtSetResource(ABW_tbOutput,Pt_ARG_TEXT_STRING,formatted,0);
-	free(formatted);
-
-	// Saving data about channel
-	f = fopen(localname,"w");
-	if(!f)
-	{
-		PtSetResource(ABW_tbStatus,Pt_ARG_TEXT_STRING,"Status: Error\nCan't save server data",0);
-		return( Pt_CONTINUE );
-	}
-	else
-	{
-		fprintf(f,"%s\n%d\n%d\n%d",ndString,spid,chid,coid);
-	}
-	fclose(f);
-
 	return( Pt_CONTINUE );
-
 }

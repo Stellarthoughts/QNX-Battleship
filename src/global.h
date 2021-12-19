@@ -1,4 +1,7 @@
 #include <photon/PtWidget.h>
+#include <errno.h>
+#include <sys/neutrino.h>
+#include <sys/siginfo.h>
 
 #ifndef SHAREFILE_INCLUDED
 #define SHAREFILE_INCLUDED
@@ -24,6 +27,15 @@
 
 	int** playerSelect;
 	int** enemySelect;
+	int** enemyHit;
+	int hits;
+
+
+	int hasServerData;
+	char ndString[512];
+	pid_t spid;
+	int chid;
+	int coid;
 
 #else
 
@@ -47,6 +59,14 @@
 
 	extern int** playerSelect;
 	extern int** enemySelect;
+	extern int** enemyHit;
+	extern int hits;
+
+	extern int hasServerData;
+	extern char ndString[512];
+	extern pid_t spid;
+	extern int chid;
+	extern int coid;
 
 #endif
 #endif

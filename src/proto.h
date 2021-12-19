@@ -1,6 +1,9 @@
 
 /* abmain.c */
 
+/* btnReadyActivate.c */
+int btnReadyActivate ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
+
 /* buttonApplyActivate.c */
 int buttonApplyActivate ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
 

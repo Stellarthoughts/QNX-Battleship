@@ -12,4 +12,5 @@ const int ABN_btnApply = 7;
 const int ABN_btnSend = 8;
 const int ABN_tbPrompt = 9;
 const int ABN_tbGameState = 10;
+const int ABN_btnReady = 11;
 

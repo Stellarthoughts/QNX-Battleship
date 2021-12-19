@@ -28,6 +28,7 @@ windowOpened( PtWidget_t *widget, ApInfo_t *apinfo, PtCallbackInfo_t *cbinfo )
 	printf("WindowOpened\n");
 	gameState = 0;
 	printf("GameState = STARTING\n");
+	PtSetResource(ABW_tbGameState, Pt_ARG_TEXT_STRING, "Game state: Starting", 0);
 
 	PhPoint_t pos;
 	PhDim_t size;
@@ -43,7 +44,8 @@ windowOpened( PtWidget_t *widget, ApInfo_t *apinfo, PtCallbackInfo_t *cbinfo )
 
 	// Init arrays
 	playerSelect = (int**) malloc(5 * sizeof(int*));
-	enemySelect = (int**) malloc(1 * sizeof(int*));;
+	enemySelect = (int**) malloc(1 * sizeof(int*));
+	enemyHit = (int**) malloc(25 * sizeof(int*));
 
 	int i,j;
 
@@ -97,6 +99,8 @@ windowOpened( PtWidget_t *widget, ApInfo_t *apinfo, PtCallbackInfo_t *cbinfo )
 
 	gameState = 1;
 	printf("GameState = PREPARING\n");
+	PtSetResource(ABW_tbPrompt, Pt_ARG_TEXT_STRING, "Hint: Fill your field with 5 ships, then hit Apply", 0);
+	PtSetResource(ABW_tbGameState, Pt_ARG_TEXT_STRING, "Game state: Preparing", 0);
 	return( Pt_CONTINUE );
 }
 
@@ -107,6 +111,7 @@ int PlayerButtonPress (PtWidget_t *widget, void *data, PtCallbackInfo_t *info)
 	printf("PlayerButtonPress\n");
 	if(gameState == 1)
 	{
+		PtSetResource(ABW_tbPrompt, Pt_ARG_TEXT_STRING, "Hint: Fill your field with 5 ships, then hit Apply", 0);
 		int k;
 
 		bool noNeighboor = true;
@@ -168,10 +173,26 @@ int PlayerButtonPress (PtWidget_t *widget, void *data, PtCallbackInfo_t *info)
 
 int EnemyButtonPress (PtWidget_t *widget, void *data, PtCallbackInfo_t *info)
 {
+	int* cell = (int*) data;
 	printf("EnemyButtonPress\n");
 	if(gameState == 3)
 	{
-		printf("GameState = 3\n");
+		int i = 0;
+		while(enemyHit[i] != NULL && i < hits)
+		{
+			if(enemyHit[i][0] == cell[0] && enemyHit[i][1] == cell[1])
+			{
+				return( Pt_CONTINUE );
+			}
+			i++;
+		}
+
+		if(enemySelect[0] != NULL)
+		{
+			PtSetResource(ButtonMatEnemy[enemySelect[0][0]][enemySelect[0][1]],Pt_ARG_FILL_COLOR,Pg_VGA4,0);
+		}
+		enemySelect[0] = cell;
+		PtSetResource(ButtonMatEnemy[enemySelect[0][0]][enemySelect[0][1]],Pt_ARG_FILL_COLOR,Pg_DBLUE,0);
 	}
 	return( Pt_CONTINUE );
 }

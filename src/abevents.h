@@ -13,6 +13,7 @@ static const ApEventLink_t AbLinks_base[] = {
 	{ 8, 0, 0L, 0L, 0L, NULL, NULL, "btnReset", 2009, buttonResetActivate, 0, 0, 0, 0, },
 	{ 8, 0, 0L, 0L, 0L, NULL, NULL, "btnApply", 2009, buttonApplyActivate, 0, 0, 0, 0, },
 	{ 8, 0, 0L, 0L, 0L, NULL, NULL, "btnSend", 2009, buttonSendActivate, 0, 0, 0, 0, },
+	{ 8, 0, 0L, 0L, 0L, NULL, NULL, "btnReady", 2009, btnReadyActivate, 0, 0, 0, 0, },
 	{ 0 }
 	};
 
