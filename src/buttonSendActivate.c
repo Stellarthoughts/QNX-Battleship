@@ -47,7 +47,7 @@ int sendToServer(char* message);
 int
 buttonSendActivate( PtWidget_t *widget, ApInfo_t *apinfo, PtCallbackInfo_t *cbinfo )
 {
-	printf("%d",3);
+	//printf("%d",3);
 	/* eliminate 'unreferenced' warnings */
 	widget = widget, apinfo = apinfo, cbinfo = cbinfo;
 

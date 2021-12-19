@@ -207,10 +207,10 @@ multi
 20
 Game state: Starting1007
 pos
-420,12
+417,12
 1005
 dim
-200,27
+203,29
 1004
 data
 10
@@ -219,6 +219,12 @@ font
 TextFont12u
 3000
 choice
+1
+3024
+choice
+1
+3022
+numeric
 1
 0
 PtButton

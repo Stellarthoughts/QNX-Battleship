@@ -23,13 +23,14 @@ int gameState = 0;
 // 1 - preparing;
 // 2 - filled field;
 // 3 - battle;
-// 4 - enemy selected
-// 5 - game finished;
+// 4 - game finished;
 
 int** playerSelect;
 int** enemySelect;
 int** enemyHit;
 int hits = 0;
+
+int playerNum;
 
 char ndString[512];
 pid_t spid;

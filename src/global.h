@@ -37,6 +37,8 @@
 	int chid;
 	int coid;
 
+	int playerNum;
+
 #else
 
 	extern PtWidget_t*** ButtonMatPlayer;
@@ -67,6 +69,8 @@
 	extern pid_t spid;
 	extern int chid;
 	extern int coid;
+
+	extern int playerNum;
 
 #endif
 #endif

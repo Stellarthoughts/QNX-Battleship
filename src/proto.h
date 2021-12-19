@@ -3,12 +3,19 @@
 
 /* btnReadyActivate.c */
 int btnReadyActivate ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
+char **split ( char *string , int *finalSize , int splitMaxSize );
 
 /* buttonApplyActivate.c */
 int buttonApplyActivate ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
 
+/* buttonAttackActivate.c */
+int buttonAttackActivate ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
+
 /* buttonExitActivate.c */
 int buttonExitActivate ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
+
+/* buttonReadyActivate.c */
+int buttonReadyActivate ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
 
 /* buttonReconnectActivate.c */
 int buttonReconnectActivate ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
