@@ -45,7 +45,7 @@ buttonReconnectActivate( PtWidget_t *widget, ApInfo_t *apinfo, PtCallbackInfo_t 
 	}
 
 	// Read server data
-	char* filename = "/prog/lab8/serverInfo.txt";
+	char* filename = "serverInfo.txt";
 	f = fopen(filename,"r");
 	if(!f)
 	{

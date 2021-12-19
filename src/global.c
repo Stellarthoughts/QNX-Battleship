@@ -21,10 +21,12 @@ int gridEnemyY = 150;
 int gameState = 0;
 // 0 - game has not started;
 // 1 - preparing;
-// 2 - battle;
-// 3 - game finished;
+// 2 - filled field;
+// 3 - battle;
+// 4 - enemy selected
+// 5 - game finished;
 
-int*** playerSelect;
-int*** enemySelect;
+int** playerSelect;
+int** enemySelect;
 
 

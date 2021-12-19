@@ -1,18 +1,17 @@
 
 /* abmain.c */
 
-/* btnRestartActivate.c */
-int btnRestartActivate ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
-
-/* buttonEnemyActivate.c */
+/* buttonApplyActivate.c */
+int buttonApplyActivate ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
 
 /* buttonExitActivate.c */
 int buttonExitActivate ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
 
-/* buttonPlayerActivate.c */
-
 /* buttonReconnectActivate.c */
 int buttonReconnectActivate ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
+
+/* buttonResetActivate.c */
+int buttonResetActivate ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
 
 /* buttonRestartActivate.c */
 int buttonRestartActivate ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
@@ -22,8 +21,12 @@ int buttonSendActivate ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_
 int sendToServer ( char *message );
 void handler ( int signo );
 
+/* global.c */
+
 /* windowOpened.c */
 int windowOpened ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
+int PlayerButtonPress ( PtWidget_t *widget , void *data , PtCallbackInfo_t *info );
+int EnemyButtonPress ( PtWidget_t *widget , void *data , PtCallbackInfo_t *info );
 
 /* windowStart.c */
 int windowStart ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );

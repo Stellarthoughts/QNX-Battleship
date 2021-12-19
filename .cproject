@@ -16,11 +16,11 @@
 <pathentry kind="out" path=""/>
 <pathentry kind="con" path="com.qnx.tools.ide.qde.QDE_PROJECT_CONTAINER"/>
 </storageModule>
+<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 <storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
 <buildTargets>
 <target name="build" path="" targetID="com.qnx.tools.ide.qde.core.cbuilder">
 <buildCommand>make</buildCommand>
-<buildArguments></buildArguments>
 <buildTarget>all</buildTarget>
 <stopOnError>false</stopOnError>
 <useDefaultCommand>true</useDefaultCommand>
@@ -28,7 +28,6 @@
 </target>
 <target name="clean" path="" targetID="com.qnx.tools.ide.qde.core.cbuilder">
 <buildCommand>make</buildCommand>
-<buildArguments></buildArguments>
 <buildTarget>clean</buildTarget>
 <stopOnError>false</stopOnError>
 <useDefaultCommand>true</useDefaultCommand>
@@ -36,7 +35,6 @@
 </target>
 <target name="rebuild" path="" targetID="com.qnx.tools.ide.qde.core.cbuilder">
 <buildCommand>make</buildCommand>
-<buildArguments></buildArguments>
 <buildTarget>clean all</buildTarget>
 <stopOnError>false</stopOnError>
 <useDefaultCommand>true</useDefaultCommand>
@@ -51,6 +49,21 @@
 <runAllBuilders>true</runAllBuilders>
 </target>
 </buildTargets>
+</storageModule>
+<storageModule moduleId="com.qnx.tools.ide.qde.core.QNXProjectProperties">
+<makefile value="Makefile"/>
+<command value="make"/>
+<code_coverage value="false"/>
+<profiling value="false"/>
+<mudflapth value="false"/>
+<instrumentedFunctionProfiling value="false"/>
+<type value="1"/>
+<parallel_build value="false"/>
+<parallel_build_number value="1"/>
+<active_configurations>
+<configuration value="_x86_r"/>
+<configuration indexing="true" value="_x86_g"/>
+</active_configurations>
 </storageModule>
 </cconfiguration>
 </storageModule>

@@ -21,13 +21,9 @@
 	int gridEnemyY;
 
 	int gameState;
-	// 0 - game has not started;
-	// 1 - preparing;
-	// 2 - battle;
-	// 3 - game finished;
 
-	int*** playerSelect;
-	int*** enemySelect;
+	int** playerSelect;
+	int** enemySelect;
 
 #else
 
@@ -48,13 +44,9 @@
 	extern int gridEnemyY;
 
 	extern int gameState;
-	// 0 - game has not started;
-	// 1 - preparing;
-	// 2 - battle;
-	// 3 - game finished;
 
-	extern int*** playerSelect;
-	extern int*** enemySelect;
+	extern int** playerSelect;
+	extern int** enemySelect;
 
 #endif
 #endif

@@ -28,5 +28,7 @@ postbuild:
 	$(POST_BUILD)
 
 include $(MKFILES_ROOT)/qtargets.mk
+
 OPTIMIZE_TYPE_g=none
 OPTIMIZE_TYPE=$(OPTIMIZE_TYPE_$(filter g, $(VARIANTS)))
+

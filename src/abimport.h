@@ -14,7 +14,8 @@ int windowStart( PtWidget_t *widget, ApInfo_t *data, PtCallbackInfo_t *cbinfo );
 int buttonExitActivate( PtWidget_t *widget, ApInfo_t *data, PtCallbackInfo_t *cbinfo );
 int buttonSendActivate( PtWidget_t *widget, ApInfo_t *data, PtCallbackInfo_t *cbinfo );
 int windowOpened( PtWidget_t *widget, ApInfo_t *data, PtCallbackInfo_t *cbinfo );
-int buttonRestartActivate( PtWidget_t *widget, ApInfo_t *data, PtCallbackInfo_t *cbinfo );
+int buttonApplyActivate( PtWidget_t *widget, ApInfo_t *data, PtCallbackInfo_t *cbinfo );
+int buttonResetActivate( PtWidget_t *widget, ApInfo_t *data, PtCallbackInfo_t *cbinfo );
 #ifdef __cplusplus
 }
 #endif
