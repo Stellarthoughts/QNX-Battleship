@@ -79,21 +79,3 @@ int buttonReadyActivate( PtWidget_t *widget, ApInfo_t *apinfo, PtCallbackInfo_t 
 	return( Pt_CONTINUE );
 
 }
-
-char** split(char* string, int* finalSize, int splitMaxSize)
-{
-	char *copy = strdup(string);
-	char **spl = (char**) malloc(sizeof(char*) * 512);
-	int n = 0;
-	char *single = strtok_r(copy," ",&string);
-	while(single != NULL)
-	{
-		//realloc(spl,(n+1) * sizeof(char*));
-		spl[n] = strdup(single);
-		single = strtok_r(NULL," ",&string);
-		n++;
-	}
-	free(single);
-	*finalSize = n;
-	return spl;
-}

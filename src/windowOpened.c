@@ -81,8 +81,8 @@ windowOpened( PtWidget_t *widget, ApInfo_t *apinfo, PtCallbackInfo_t *cbinfo )
 		ButtonMatEnemy[i] = (PtWidget_t**) malloc(gridRows * sizeof(PtWidget_t**));
 		for(j = 0; j < gridCols; j++)
 		{
-			pos.x = gridEnemyX + i * cellSize + buttonPadding;
-			pos.y = gridEnemyY + j * cellSize + buttonPadding;
+			pos.x = gridEnemyX + j * cellSize + buttonPadding;
+			pos.y = gridEnemyY + i * cellSize + buttonPadding;
 			size.w = cellSize - 2 * buttonPadding;
 			size.h = cellSize - 2 * buttonPadding;
 

@@ -23,7 +23,6 @@ int gameState = 0;
 // 1 - preparing;
 // 2 - filled field;
 // 3 - battle;
-// 4 - game finished;
 
 int** playerSelect;
 int** enemySelect;
