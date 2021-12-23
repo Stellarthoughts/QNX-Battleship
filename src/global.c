@@ -5,6 +5,8 @@
 PtWidget_t*** ButtonMatPlayer = NULL;
 PtWidget_t*** ButtonMatEnemy = NULL;
 
+PtWidget_t* timer = NULL;
+
 int gridRows = 5;
 int gridCols = 5;
 int buttonPadding = 2;

@@ -46,6 +46,7 @@ windowOpened( PtWidget_t *widget, ApInfo_t *apinfo, PtCallbackInfo_t *cbinfo )
 	playerSelect = (int**) malloc(5 * sizeof(int*));
 	enemySelect = (int**) malloc(1 * sizeof(int*));
 	enemyHit = (int**) malloc(25 * sizeof(int*));
+	hits = 0;
 
 	int i,j;
 
@@ -113,7 +114,6 @@ int PlayerButtonPress (PtWidget_t *widget, void *data, PtCallbackInfo_t *info)
 	{
 		PtSetResource(ABW_tbPrompt, Pt_ARG_TEXT_STRING, "Hint: Fill your field with 5 ships, then hit Apply", 0);
 		int k;
-
 		bool noNeighboor = true;
 
 		for(k = 0; k < 4; k++)

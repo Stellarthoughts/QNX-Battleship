@@ -2,6 +2,7 @@
 #include <errno.h>
 #include <sys/neutrino.h>
 #include <sys/siginfo.h>
+#include <photon/PtTimer.h>
 
 #ifndef SHAREFILE_INCLUDED
 #define SHAREFILE_INCLUDED
@@ -9,6 +10,8 @@
 
 	PtWidget_t*** ButtonMatPlayer;
 	PtWidget_t*** ButtonMatEnemy;
+
+	PtWidget_t* timer;
 
 	int gridRows;
 	int gridCols;
@@ -43,6 +46,8 @@
 
 	extern PtWidget_t*** ButtonMatPlayer;
 	extern PtWidget_t*** ButtonMatEnemy;
+
+	extern PtWidget_t* timer;
 
 	extern int gridRows;
 	extern int gridCols;
