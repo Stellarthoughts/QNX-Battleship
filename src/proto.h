@@ -31,6 +31,9 @@ void handler ( int signo );
 
 /* global.c */
 
+/* globalFunctions.c */
+void ResetGame ( int winCondition );
+
 /* windowOpened.c */
 int windowOpened ( PtWidget_t *widget , ApInfo_t *apinfo , PtCallbackInfo_t *cbinfo );
 int PlayerButtonPress ( PtWidget_t *widget , void *data , PtCallbackInfo_t *info );

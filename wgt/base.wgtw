@@ -246,3 +246,16 @@ TextFont12b
 multi
 5
 Ready0
+PtText
+2
+PtText
+1005
+dim
+85,27
+3011
+string
+Text String
+1007
+pos
+419,74
+0

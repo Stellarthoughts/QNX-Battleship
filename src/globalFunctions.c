@@ -29,11 +29,10 @@ void ResetGame(int winCondition)
 	}
 
 	PtSetResource(ABW_tbGameState, Pt_ARG_TEXT_STRING, "Game state: Starting", 0);
+	PtSetResource(ABW_tbStatus,Pt_ARG_TEXT_STRING,"Status: Connected to server",0);
 
 	for(i = 0; i < 5; i++ ) playerSelect[i] = NULL;
 	enemySelect[0] = NULL;
 	for(i = 0; i < 25 ; i++ ) enemyHit[i] = NULL;
 	hits = 0;
-
-
 }
